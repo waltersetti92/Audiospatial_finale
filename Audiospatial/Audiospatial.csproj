@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AF46E96E-AFAA-498A-AF71-3E0D71C8663D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Audiospatial</RootNamespace>
+    <AssemblyName>Audiospatial</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.5.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.5.0.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivityMathSpatialAudio.cs" />
+    <Compile Include="ActivityUdaUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ActivityUdaUC.Designer.cs">
+      <DependentUpon>ActivityUdaUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity_Stanza.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Activity_Stanza.Designer.cs">
+      <DependentUpon>Activity_Stanza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnswerUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AnswerUC.Designer.cs">
+      <DependentUpon>AnswerUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business_Logic.cs" />
+    <Compile Include="debugInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="debugInfo.Designer.cs">
+      <DependentUpon>debugInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Final.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Final.Designer.cs">
+      <DependentUpon>Final.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finale_Scenario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Finale_Scenario.Designer.cs">
+      <DependentUpon>Finale_Scenario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Initial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Initial.Designer.cs">
+      <DependentUpon>Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MessageUC.Designer.cs">
+      <DependentUpon>MessageUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Primo_Scenario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Primo_Scenario.Designer.cs">
+      <DependentUpon>Primo_Scenario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Quarto_Scenario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Quarto_Scenario.Designer.cs">
+      <DependentUpon>Quarto_Scenario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quinto_Scenario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Quinto_Scenario.Designer.cs">
+      <DependentUpon>Quinto_Scenario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RandomTools.cs" />
+    <Compile Include="Secondo_Scenario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Secondo_Scenario.Designer.cs">
+      <DependentUpon>Secondo_Scenario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sesto_Scenario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sesto_Scenario.Designer.cs">
+      <DependentUpon>Sesto_Scenario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Speakers.cs" />
+    <Compile Include="Terzo_Scenario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Terzo_Scenario.Designer.cs">
+      <DependentUpon>Terzo_Scenario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucSpeaker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSpeaker.Designer.cs">
+      <DependentUpon>ucSpeaker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uda_server_communication.cs" />
+    <EmbeddedResource Include="ActivityUdaUC.resx">
+      <DependentUpon>ActivityUdaUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity_Stanza.resx">
+      <DependentUpon>Activity_Stanza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnswerUC.resx">
+      <DependentUpon>AnswerUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="debugInfo.resx">
+      <DependentUpon>debugInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Final.resx">
+      <DependentUpon>Final.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finale_Scenario.resx">
+      <DependentUpon>Finale_Scenario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Initial.resx">
+      <DependentUpon>Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageUC.resx">
+      <DependentUpon>MessageUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Primo_Scenario.resx">
+      <DependentUpon>Primo_Scenario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Quarto_Scenario.resx">
+      <DependentUpon>Quarto_Scenario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quinto_Scenario.resx">
+      <DependentUpon>Quinto_Scenario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secondo_Scenario.resx">
+      <DependentUpon>Secondo_Scenario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sesto_Scenario.resx">
+      <DependentUpon>Sesto_Scenario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Terzo_Scenario.resx">
+      <DependentUpon>Terzo_Scenario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucSpeaker.resx">
+      <DependentUpon>ucSpeaker.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bed4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\traffic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\traffic2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\traffic3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\car.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\thunderstorm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\plan2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\tribal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\jungle.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\african.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\drums.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\tribal4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\lion.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\Cartoon-Lion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\tribsl5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bed5.jpg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bed5.jpg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bed1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\resources1\bed2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\resources1\traffic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\resources1\trafficjam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\resources1\plane3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\resources1\popolazione.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\resources1\lion1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\resources1\temple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\Dreamcatcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\resources1\bedsingle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\resources1\Picture1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alarm1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wakeup.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wakeup1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\flaute.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\flaute2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources\Final_Indizio.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
