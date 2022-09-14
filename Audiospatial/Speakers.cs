@@ -33,10 +33,7 @@ namespace Audiospatial
 
         public async Task<bool> play(string speaker)
         {
-            while (true)
-            {
-                string k = parentForm.Status_Changed(parentForm.activity_form);
-                int status = int.Parse(k);
+
                 string filename = soundmap[sound_to_play];
                 try
                 {
@@ -53,9 +50,7 @@ namespace Audiospatial
                 {
                     // Connection failed
                 }
-                break;
-            }
-
+          
             return true;
         }
     }

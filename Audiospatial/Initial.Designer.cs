@@ -35,12 +35,12 @@
             // 
             this.labLuda.AutoSize = true;
             this.labLuda.BackColor = System.Drawing.Color.Transparent;
-            this.labLuda.Font = new System.Drawing.Font("Snap ITC", 90F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labLuda.ForeColor = System.Drawing.Color.Green;
-            this.labLuda.Location = new System.Drawing.Point(71, 378);
+            this.labLuda.Font = new System.Drawing.Font("Snap ITC", 80F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labLuda.ForeColor = System.Drawing.Color.OrangeRed;
+            this.labLuda.Location = new System.Drawing.Point(32, 14);
             this.labLuda.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labLuda.Name = "labLuda";
-            this.labLuda.Size = new System.Drawing.Size(1690, 231);
+            this.labLuda.Size = new System.Drawing.Size(1505, 206);
             this.labLuda.TabIndex = 1;
             this.labLuda.Text = "IL BUCO NERO";
             // 
