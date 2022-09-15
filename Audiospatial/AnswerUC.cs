@@ -121,6 +121,10 @@ namespace Audiospatial
                         this.Update();
                         while (true)
                         {
+                            if (status == 11 || status == 12)
+                            {
+                                System.Diagnostics.Process.GetCurrentProcess().Kill();
+                            }
                             if (status == 14)
                             {
                                 parentForm.contatore_iniziale = 1;

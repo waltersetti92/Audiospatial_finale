@@ -24,13 +24,15 @@ namespace Audiospatial
     class Business_Logic
     {
         private Main mn;
+        private Speakers sps;
         public string save_status;
         private static System.Timers.Timer aTimer;
         public int counter_timer;
         public bool firststart = true;
-        public Business_Logic(Main form)
+        public Business_Logic(Main form, Speakers sps1)
         {
             mn = form;
+            sps = sps1;
             counter_timer = 0;
             aTimer = new System.Timers.Timer(10000);
             aTimer.Elapsed += new ElapsedEventHandler(New_Status_UDA);
@@ -53,6 +55,7 @@ namespace Audiospatial
                     save_status = uda_status;
                     mn.Status_Changed(uda_status);
                     mn.activity_form = uda_status;
+                    sps.status_uda = uda_status;
                     string put_server;
                     if (firststart || Equals(uda_status, "0"))
                     {
@@ -79,6 +82,7 @@ namespace Audiospatial
                         int status = int.Parse(uda_status);
                         mn.Status_Changed(uda_status);
                         mn.activity_form = uda_status;
+                        sps.status_uda = uda_status;
                         string put_server = Url_Put(uda_status);
                         await uda_server_communication.Server_Request(put_server);
                     }

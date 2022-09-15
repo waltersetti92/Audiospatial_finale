@@ -85,12 +85,12 @@ namespace Audiospatial
             idle_status = "https://luda.nixo.xyz//api/uda/put/?i=5&k=0";
             started_uda = "https://luda.nixo.xyz//api/uda/put/?i=5&k=7" + "&data=" + data_start;
             completed = "https://luda.nixo.xyz//api/uda/put/?i=5&k=16";
-            Business_Logic BL = new Business_Logic(this);
+            speakers = new Speakers();
+            Business_Logic BL = new Business_Logic(this,speakers);
             onactivity = 1; // bisogna mettere 1
             messaggio = 1;
             scenario = 1;
-            participants = 0; // qui 0
-            speakers = new Speakers();
+            participants = 0; // qui 0         
             InitializeComponent();
             initial1.parentForm = this;
             activityUdaUC1.parentForm = this;

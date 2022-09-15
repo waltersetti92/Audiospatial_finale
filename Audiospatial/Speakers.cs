@@ -18,6 +18,8 @@ namespace Audiospatial
         public String sound_to_play = "";
         //String url = "http://192.168.100.4:8766/"; //quello giusto
         String url = "https://luda.nixo.xyz/";
+        public string status_uda;
+
 
         private Dictionary<string, string> soundmap = new Dictionary<string, string> {
             { "sveglia", "menta"},
@@ -34,22 +36,36 @@ namespace Audiospatial
         public async Task<bool> play(string speaker)
         {
 
-                string filename = soundmap[sound_to_play];
-                try
+            while (true)
+            {
+                if (String.Equals(status_uda, "11" )|| String.Equals(status_uda, "12"))
                 {
-                    WebRequest server = HttpWebRequest.Create(url + "?speaker=" + speaker + "&file=" + filename);
-                    var response = server.GetResponse();
-                    using (var reader = new StreamReader(response.GetResponseStream()))
+                    System.Diagnostics.Process.GetCurrentProcess().Kill();
+                }
+                if (String.Equals(status_uda, "10") || String.Equals(status_uda, "14"))
+                {
+                    string filename = soundmap[sound_to_play];
+                    try
                     {
-                        var result = await reader.ReadToEndAsync();
+                        WebRequest server = HttpWebRequest.Create(url + "?speaker=" + speaker + "&file=" + filename);
+                        var response = server.GetResponse();
+                        using (var reader = new StreamReader(response.GetResponseStream()))
+                        {
+                            var result = await reader.ReadToEndAsync();
+                        }
+                        Thread.Sleep(1500);
+                        return true;
                     }
-                    Thread.Sleep(1500);
-                    return true;
+                    catch (Exception ex)
+                    {
+                        // Connection failed
+                    }
                 }
-                catch (Exception ex)
-                {
-                    // Connection failed
-                }
+               
+                break;
+            }
+                
+    
           
             return true;
         }
