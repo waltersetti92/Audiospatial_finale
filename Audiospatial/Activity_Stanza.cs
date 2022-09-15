@@ -151,8 +151,10 @@ namespace Audiospatial
                         this.Update();
                         labTimeCounter.Invalidate();
                     }
+
                     break;
                 }
+                Thread.Sleep(400);
             }
 
 

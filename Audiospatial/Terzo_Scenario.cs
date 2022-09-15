@@ -113,6 +113,7 @@ namespace Audiospatial
                             timerlabel.Text = timeleft.ToString();
                         this.Update();
                     }
+                    Thread.Sleep(400);
                     break;
                 }
             }
@@ -149,6 +150,7 @@ namespace Audiospatial
                         //timerlabel.Visible = false;
                        
                     }
+                    Thread.Sleep(400);
                     break;
                 }
 

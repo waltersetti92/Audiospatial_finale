@@ -112,6 +112,7 @@ namespace Audiospatial
                             timerlabel.Text = timeleft.ToString();
                         this.Update();
                     }
+                    Thread.Sleep(400);
                     break;
                 }
             }
@@ -144,6 +145,7 @@ namespace Audiospatial
                         await uda_server_communication.Server_Request(put_started);
                         parentForm.closeMessage();
                     }
+                    Thread.Sleep(400);
                     break;
                 }
 

@@ -11,6 +11,9 @@ using System.Threading;
 using System.Media;
 using System.IO;
 using Newtonsoft.Json.Linq;
+using System.IO.Pipes;
+using Newtonsoft.Json;
+using System.Diagnostics;
 
 
 namespace Audiospatial
@@ -121,11 +124,14 @@ namespace Audiospatial
                         this.Update();
                         while (true)
                         {
-                            if (status == 11 || status == 12)
+                            string k1 = parentForm.Status_Changed(parentForm.activity_form);
+                            int status1 = int.Parse(k1);
+                            if (status1 == 11 || status1 == 12)
                             {
                                 System.Diagnostics.Process.GetCurrentProcess().Kill();
+                                break;
                             }
-                            if (status == 14)
+                            if (status1 == 14)
                             {
                                 parentForm.contatore_iniziale = 1;
                                 JToken data = await uda_server_communication.Server_Request_datasent(get_status_uda);
@@ -155,15 +161,16 @@ namespace Audiospatial
                                 parentForm.onAnswer(response);
 
                             }
+                            Thread.Sleep(400);
                             break;
                         }
 
                     }
-
+                    Thread.Sleep(400);
                     break;
-                   
-                
 
+
+                    
             }
                 if (timeleft == 0)
                 {

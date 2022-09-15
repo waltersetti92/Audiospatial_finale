@@ -116,7 +116,7 @@ namespace Audiospatial
                         timerlabel.Text = timeleft.ToString();
                         this.Update();
                     }
-
+                    Thread.Sleep(400);
                     break;
                 }
             }
@@ -150,6 +150,7 @@ namespace Audiospatial
                         parentForm.contatore_iniziale = 1;
                         parentForm.closeMessage();
                     }
+                    Thread.Sleep(400);
                     break;
                 }
  
