@@ -29,6 +29,8 @@ namespace Audiospatial
         private string currStartingNumber = "";
         private string currResult = "";
         public string k;
+        public string put_wait_data;
+        public string put_started;
         public Activity_Stanza()
         {
             InitializeComponent();
@@ -36,6 +38,8 @@ namespace Audiospatial
             SetStyle(ControlStyles.Opaque, true);
             this.BackColor = Color.Transparent;
             resetOperations();
+            put_started = "/api/uda/put/?i=5&k=7";
+            put_wait_data = "/api/uda/put/?i=5&k=14" + "&data=" + "{\"answer\": \"Inserisci il risultato corretto\", \"input_type\":\"\"}";
         }
         private void resetOperations()
         {
@@ -128,7 +132,7 @@ namespace Audiospatial
             labCenter.Invalidate();
 
         }
-        public void setCountDown(int n)
+        public async void setCountDown(int n)
         {
             while (true)
             {
@@ -138,20 +142,12 @@ namespace Audiospatial
                 {
                     if (status == 11 || status == 12)
                     {
-                        Application.Exit();
-                        Environment.Exit(0);
-                    }
-                    if (status == 13)
-                    {
-                        parentForm.Abort_UDA();
-                        break;
+                        System.Diagnostics.Process.GetCurrentProcess().Kill();
                     }
                     if (status == 7 || status == 10 )
-                    {                    
-                       // string strnum = representNumber(n);
-                        //labTimeCounter.Visible = (strnum.Length > 0);
-                      // strnum = fillBlanks(1, strnum);
-                       // labTimeCounter.Text = strnum;
+                    {
+                        parentForm.contatore_iniziale = 0;
+                        await uda_server_communication.Server_Request(put_started);
                         this.Update();
                         labTimeCounter.Invalidate();
                     }

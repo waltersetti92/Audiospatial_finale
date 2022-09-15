@@ -15,7 +15,7 @@ namespace Audiospatial
     {
         public Main parentForm { get; set; }
         public Speakers speakers = null;
-        public int timeleft = 15; //timeleft deve essere 0
+        public int timeleft = 2; //timeleft deve essere 0
         public int timer_game = 0;
         public int seconds = 0;
         public int minutes = 5;
@@ -30,8 +30,8 @@ namespace Audiospatial
             speakers = new Speakers();
             put_started = "/api/uda/put/?i=5&k=7";
             put_wait_data = "/api/uda/put/?i=5&k=14" + "&data=" + "{\"answer\": \"Inserisci il risultato corretto\", \"input_type\":\"\"}";
-            timerlabel.Text = "15";
-            timeleft = 15;
+            timerlabel.Text = "02";
+            timeleft = 2;
      
 
         }
@@ -73,8 +73,8 @@ namespace Audiospatial
         public void counter()
         {
             timerlabel.Visible = true;
-            timeleft = 15;
-            timerlabel.Text = "15";
+            timeleft = 2;
+            timerlabel.Text = "02";
             timer1.Enabled = true;
             parentForm.PutStarted();
             timer1.Start();
@@ -95,8 +95,7 @@ namespace Audiospatial
                     {
                         if (status == 11 || status == 12)
                         {
-                            Application.Exit();
-                            Environment.Exit(0);
+                            System.Diagnostics.Process.GetCurrentProcess().Kill();
                         }
                         if (status == 13)
                         {
@@ -106,6 +105,7 @@ namespace Audiospatial
                         }
                         if (status == 10)
                         {
+                            parentForm.contatore_iniziale = 0;
                             await uda_server_communication.Server_Request(put_started);
                         }
                         Thread.Sleep(1000);
@@ -130,8 +130,7 @@ namespace Audiospatial
                     {
                         if (status == 11 || status == 12)
                         {
-                            Application.Exit();
-                            Environment.Exit(0);
+                            System.Diagnostics.Process.GetCurrentProcess().Kill();
                         }
                         if (status == 13)
                         {
@@ -141,12 +140,14 @@ namespace Audiospatial
                         }
                         if (status == 10 || status==7)
                         {
-                            await uda_server_communication.Server_Request(put_wait_data);
+                            parentForm.contatore_iniziale = 1;
+                            await uda_server_communication.Server_Request(put_started);
                         }
                         timerlabel.Text = "00";
                         this.Update();
                         timer1.Stop();
-                        await uda_server_communication.Server_Request(put_started);
+                        //await uda_server_communication.Server_Request(put_wait_data);
+                        parentForm.contatore_iniziale = 1;
                         parentForm.closeMessage();
                     }
                     break;
@@ -156,6 +157,11 @@ namespace Audiospatial
         }
 
         private void timerlabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labPrimoScenario_Click(object sender, EventArgs e)
         {
 
         }

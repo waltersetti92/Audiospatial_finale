@@ -53,6 +53,7 @@
             this.labPrimoScenario.Size = new System.Drawing.Size(1452, 93);
             this.labPrimoScenario.TabIndex = 1;
             this.labPrimoScenario.Text = "SVEGLIA! E\' L\'ORA DI ANDARE!";
+            this.labPrimoScenario.Click += new System.EventHandler(this.labPrimoScenario_Click);
             // 
             // label1
             // 

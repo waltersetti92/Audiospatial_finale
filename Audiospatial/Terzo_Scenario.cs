@@ -15,7 +15,7 @@ namespace Audiospatial
     {
         public Main parentForm { get; set; }
         public Speakers speakers = null;
-        public int timeleft = 15;
+        public int timeleft = 2;
         public int timer_game = 0;
         private int total_seconds;
         public int seconds = 0;
@@ -59,7 +59,7 @@ namespace Audiospatial
         public void counter()
         {
             timerlabel.Visible = true;
-            timeleft = 15;
+            timeleft = 2;
             timerlabel.Text = "15";
             timer1.Enabled = true;
             timer1.Start();

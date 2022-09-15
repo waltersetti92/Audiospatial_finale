@@ -3,12 +3,14 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Media;
 using System.IO;
-using System.IO.Pipes;
-using Newtonsoft.Json;
 using System.Threading;
+using System.IO.Pipes;
 using System.Text;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Diagnostics;
+
 
 
 
@@ -52,6 +54,10 @@ namespace Audiospatial
         public string completed;
         public static System.Diagnostics.Process proc;
         public int turno = 0;
+        public int contatore_iniziale = 0;
+        public string MPV = resourcesPath + "\\" + "mpv.com";
+        public string initial_video = Path.GetDirectoryName(Application.ExecutablePath) + "\\..\\..\\..\\..\\Video_GAMES\\Audiospaziale\\iniziale.mov";
+       // public string initial_video = Path.GetDirectoryName(Application.ExecutablePath) + "\\..\\..\\..\\..\\..\\Video_GAMES\\Audiospaziale\\iniziale.mov";
         public string wait_data()
         {
             int[] can_answer;
@@ -66,7 +72,7 @@ namespace Audiospatial
             }
             turno += 1;
             Dictionary<String, object> request = new Dictionary<String, object>();
-            request.Add("question", "Inserisci il risultato dell'operazione");
+            request.Add("question", "Inserisci il risultato corretto");
             request.Add("input_type", 0);
             request.Add("can_answer", can_answer);
 
@@ -155,58 +161,12 @@ namespace Audiospatial
         }
         public void video_reproduction(string video1)
         {
-            string video = "C:\\Users\\wsetti\\Documents\\Video_LUDA\\LUDA_Matematica_1.mov";
-            var Video = new NamedPipeClientStream("mpv-pipe");
-            Video.Connect();
-            StreamReader reader = new StreamReader(Video);
-            StreamWriter writer = new StreamWriter(Video);
-            writer.WriteLine("set pause yes");
-            writer.WriteLine($"loadfile {video}");
-            writer.WriteLine("set seek 0 absolute");
-            writer.WriteLine("set fullscreen yes");
-            writer.WriteLine("set ontop yes");
-            writer.WriteLine("set pause no");
-            writer.Flush();
-            Dictionary<string, object> getPos = new Dictionary<string, object>();
-            getPos.Add("command", new List<string> { "get_property", "percent-pos" });
-            getPos.Add("request_id", 88);
-
-
-            writer.WriteLine(JsonConvert.SerializeObject(getPos));
-            System.Diagnostics.Debug.WriteLine(JsonConvert.SerializeObject(getPos));
-            writer.Flush();
-            bool started = false;
-            bool wait_video = true;
-            while (wait_video)
-            {
-                writer.WriteLine(JsonConvert.SerializeObject(getPos));
-                System.Diagnostics.Debug.WriteLine(JsonConvert.SerializeObject(getPos));
-                writer.Flush();
-                string response = reader.ReadLine();
-                JObject json_parsed = JObject.Parse(response);
-
-                if (!started)
-                {
-                    var id = json_parsed["request_id"];
-                    if (id != null && (int)id == 88)
-                    {
-                        started = true;
-                    }
-                }
-                if (started)
-                {
-                    var id = json_parsed["request_id"];
-                    var error = json_parsed["error"];
-
-                    if (id != null && (int)id == 88 && error != null && (string)error == "property unavailable")
-                    {
-                        //     System.Diagnostics.Debug.WriteLine(response);
-                        wait_video = false;
-                        // and property not available
-                    }
-                }
-            }
-            System.Diagnostics.Debug.WriteLine(reader.ReadLine());
+                string mpvcommand = "--fullscreen --ontop " + video1;
+                ProcessStartInfo proc = new ProcessStartInfo(MPV);
+                proc.WindowStyle = ProcessWindowStyle.Hidden;
+                proc.Arguments = mpvcommand;
+                Process cmd = Process.Start(proc);
+                cmd.WaitForExit();
         }
         public string Status_Changed(string k)
         {
@@ -223,8 +183,8 @@ namespace Audiospatial
                 }
                 if (status == 6)
                 {
+                    video_reproduction(initial_video);
                     initial1.Visible = false;
-                   // video_reproduction("C:\\Users\\wsetti\\Documents\\Video_LUDA\\LUDA_Matematica_1.mov");
                     onStartActivity(2, 0, 1, "1");
                 }
                 if (status == 8)
@@ -236,9 +196,7 @@ namespace Audiospatial
                 }
                 if (status == 11 || status == 12)
                 {
-
-                    Application.Exit();
-                    Environment.Exit(0);
+                    System.Diagnostics.Process.GetCurrentProcess().Kill();
 
                 }
                 if (status == 14)

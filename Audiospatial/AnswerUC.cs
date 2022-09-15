@@ -19,7 +19,7 @@ namespace Audiospatial
     {
         public Main parentForm { get; set; }
         private int iDifficulty = 0;
-        public int timeleft = 15;
+        public int timeleft = 2;
         public string k;
         public string put_wait_data;
         public string put_started;
@@ -88,8 +88,8 @@ namespace Audiospatial
         {
             timerlabel.Visible = true;
             label1.Visible = true;  
-            timerlabel.Text = "15";
-            timeleft = 15;
+            timerlabel.Text = "10";
+            timeleft = 10;
             timer1.Enabled = true;
             timer1.Start();
         }
@@ -103,36 +103,18 @@ namespace Audiospatial
                     string k = parentForm.Status_Changed(parentForm.activity_form);
                     int status = int.Parse(k);
                     string response = null;
-                    //if (status != 9 && status != 8)
-                    //{
+                    if (status != 9 && status != 8)
+                    {
                         if (status == 11 || status == 12)
                         {
-                            Application.Exit();
-                            Environment.Exit(0);
+                            System.Diagnostics.Process.GetCurrentProcess().Kill();
                         }
-                        if (status == 13)
-                        {
-                            this.Hide();
-                            parentForm.Abort_UDA();
-                            break;
-                        }
-                        if (status==9 || status == 8)
+                        if (status==7 || status == 10)
                     {
-                        MessageBox.Show("ciao");
-                        //await uda_server_communication.Server_Request(put_pause);
-                    }
-
-                        if (status == 10 || status == 7)
-                        {
-                            await uda_server_communication.Server_Request(put_wait_data);
-
-                          if (status != 14)
-                            {
-                                await uda_server_communication.Server_Request(put_wait_data);
-
-                            }
+                            parentForm.contatore_iniziale = 1;
+                            await uda_server_communication.Server_Request(parentForm.wait_data());
+                            this.Update();
                         }
-
                         Thread.Sleep(1000);
                         timeleft = timeleft - 1;
                         timerlabel.Text = timeleft.ToString();
@@ -141,6 +123,7 @@ namespace Audiospatial
                         {
                             if (status == 14)
                             {
+                                parentForm.contatore_iniziale = 1;
                                 JToken data = await uda_server_communication.Server_Request_datasent(get_status_uda);
                                 if (!(data is JArray))
                                 {
@@ -157,35 +140,19 @@ namespace Audiospatial
                                         continue;
                                     }
                                     response = (string)explorer["answer"];
-                                timer1.Stop();
-                                timer1.Enabled = false;
-                                timerlabel.Visible = false;
-                                label1.Visible = false;
-                                break;
-                                }
-                                if (response == null)
-                                {
-
-
                                     break;
-
                                 }
+                                if (response == null) { break; }
                                 parentForm.PutStarted();
-                                //   JToken data = await uda_server_communication.Server_Request_datasent(get_status_uda);
+                                timer1.Stop();
                                 timerlabel.Visible = false;
                                 label1.Visible = false;
-                         //   timer1.Stop();
-                        //    timer1.Enabled = false;
-
-                                //   await uda_server_communication.Server_Request(put_started);
-
-
-                                // FIXME
+ 
                                 parentForm.onAnswer(response);
 
                             }
                             break;
-                       // }
+                        }
 
                     }
 
@@ -203,6 +170,7 @@ namespace Audiospatial
                     timer1.Enabled = false;
                     Thread.Sleep(1000);
                     timer1.Stop();
+                    parentForm.contatore_iniziale = 0;
                     timer1.Enabled = false;
                 }
 
