@@ -27,6 +27,7 @@ namespace Audiospatial
             this.BackgroundImage = Properties.Resources.lion;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             speakers = new Speakers();
+            timerlabel.Text = "15";
             put_started = "/api/uda/put/?i=5&k=7";
             put_wait_data = "/api/uda/put/?i=5&k=14" + "&data=" + "{\"answer\": \"Inserisci il risultato corretto\", \"input_type\":\"\"}";
 
@@ -93,6 +94,7 @@ namespace Audiospatial
                         {
                             Application.Exit();
                             Environment.Exit(0);
+
                         }
                         if (status == 13)
                         {

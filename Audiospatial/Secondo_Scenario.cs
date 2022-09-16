@@ -30,7 +30,7 @@ namespace Audiospatial
             put_started = "/api/uda/put/?i=5&k=7";
             put_wait_data = "/api/uda/put/?i=5&k=14" + "&data=" + "{\"answer\": \"Inserisci il risultato corretto\", \"input_type\":\"\"}";
             timerlabel.Text = "15";
-            timeleft = 2;
+            timeleft = 15;
         }
         public void setPos(int w, int h)
         {
@@ -63,7 +63,7 @@ namespace Audiospatial
         public void counter()
         {
             timerlabel.Visible = true;
-            timeleft =2;
+            timeleft =15;
             timerlabel.Text = "15";
             timer1.Enabled = true;
             timer1.Start();
