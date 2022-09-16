@@ -30,8 +30,8 @@ namespace Audiospatial
             speakers = new Speakers();
             put_started = "/api/uda/put/?i=5&k=7";
             put_wait_data = "/api/uda/put/?i=5&k=14" + "&data=" + "{\"answer\": \"Inserisci il risultato corretto\", \"input_type\":\"\"}";
-            timerlabel.Text = "02";
-            timeleft = 2;
+            timerlabel.Text = "10";
+            timeleft = 10;
      
 
         }
@@ -73,8 +73,8 @@ namespace Audiospatial
         public void counter()
         {
             timerlabel.Visible = true;
-            timeleft = 2;
-            timerlabel.Text = "02";
+            timeleft = 10;
+            timerlabel.Text = "10";
             timer1.Enabled = true;
             parentForm.PutStarted();
             timer1.Start();

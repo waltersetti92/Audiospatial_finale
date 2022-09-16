@@ -16,8 +16,9 @@ namespace Audiospatial
     {
         public Main parentForm { get; set; }
         public String sound_to_play = "";
-        //String url = "http://192.168.100.4:8766/"; //quello giusto
+        //String url = "http://192.168.10.1:8766/"; //quello giusto
         String url = "https://luda.nixo.xyz/";
+         //String url = "http://192.168.10.1.8767/"; 
         public string status_uda;
 
 
@@ -35,6 +36,7 @@ namespace Audiospatial
 
         public async Task<bool> play(string speaker)
         {
+
 
             while (true)
             {
