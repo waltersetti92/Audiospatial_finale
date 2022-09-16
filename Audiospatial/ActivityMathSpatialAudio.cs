@@ -240,7 +240,8 @@ namespace Audiospatial
             activity.setStartNumber(-1);                // ISSUE : cannot hide current starting number
             debug.setDebugInfo(oldNumber.ToString(), currOperationsLabels[currSpeaker], currOperand.ToString(), currResult.ToString());
 
-            if (iType == N_TYPE_SPATIAL) playNsounds(speaker_labels[currSpeaker]);
+            if (iType == N_TYPE_SPATIAL) 
+                playNsounds(speaker_labels[currSpeaker]);
             else playNsounds(currOperationsSymbols[currSpeaker]);
 
         }
@@ -255,7 +256,8 @@ namespace Audiospatial
             aTimer.Tag = TAG_SOUND;
             aTimer.Start();
             currSound = 1;
-            if (iType == N_TYPE_SPATIAL) speakers.play(source);
+            if (iType == N_TYPE_SPATIAL) 
+                speakers.play(source);
             else form.playbackResourceAudio(source);
         }
 
