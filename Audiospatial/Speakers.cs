@@ -36,16 +36,15 @@ namespace Audiospatial
         public async Task<bool> play(string speaker)
         {
 
-            //while (true)
-
-            //{
+            while (true)
+            {
                 string status_uda1 = status_uda;
-                /*if (String.Equals(status_uda1, "11" )|| String.Equals(status_uda1, "12"))
+                if (String.Equals(status_uda1, "11" )|| String.Equals(status_uda1, "12"))
                 {
                     System.Diagnostics.Process.GetCurrentProcess().Kill();
-                }*/
-                //if (String.Equals(status_uda1, "10") || String.Equals(status_uda1, "14"))
-                //{
+                }
+                if (String.Equals(status_uda1, "7") || String.Equals(status_uda1, "10"))
+                {
                     string filename = soundmap[sound_to_play];
                     try
                     {
@@ -60,12 +59,12 @@ namespace Audiospatial
                     }
                     catch (Exception ex)
                     {
-                        // Connection failed
                     }
-                //}
+                    break;
+                }
                
-                //break;
-           // }
+          
+            }
                 
     
           
