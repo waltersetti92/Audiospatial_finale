@@ -25,8 +25,8 @@ namespace Audiospatial
         public Primo_Scenario()
         {
             InitializeComponent();
-            this.BackgroundImage = Properties.Resources.lion;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+          //  this.BackgroundImage = Properties.Resources.Picture1;
+          //  this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             speakers = new Speakers();
             put_started = "/api/uda/put/?i=5&k=7";
             put_wait_data = "/api/uda/put/?i=5&k=14" + "&data=" + "{\"answer\": \"Inserisci il risultato corretto\", \"input_type\":\"\"}";
@@ -113,7 +113,7 @@ namespace Audiospatial
                         if(timeleft<10 && timeleft>0)
                             timerlabel.Text = "0" + timeleft.ToString();
                         else
-                        timerlabel.Text = timeleft.ToString();
+                        timerlabel.Text = "0" + timeleft.ToString();
                         this.Update();
                     }
                     Thread.Sleep(400);
@@ -143,7 +143,7 @@ namespace Audiospatial
                             parentForm.contatore_iniziale = 1;
                             await uda_server_communication.Server_Request(put_started);
                         }
-                        timerlabel.Text = "00";
+                       // timerlabel.Text = "0" + "0";
                         this.Update();
                         timer1.Stop();
                         //await uda_server_communication.Server_Request(put_wait_data);

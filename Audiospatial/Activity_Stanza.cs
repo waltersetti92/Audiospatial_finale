@@ -34,9 +34,11 @@ namespace Audiospatial
         public Activity_Stanza()
         {
             InitializeComponent();
-            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+           // SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             SetStyle(ControlStyles.Opaque, true);
-            this.BackColor = Color.Transparent;
+          //  this.BackgroundImage = Properties.Resources.Picture1;
+           // this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            //this.BackColor = Color.Transparent;
             resetOperations();
             put_started = "/api/uda/put/?i=5&k=7";
             put_wait_data = "/api/uda/put/?i=5&k=14" + "&data=" + "{\"answer\": \"Inserisci il risultato corretto\", \"input_type\":\"\"}";
