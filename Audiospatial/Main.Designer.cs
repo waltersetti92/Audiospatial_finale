@@ -165,7 +165,7 @@
             this.answerUC1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.answerUC1.Name = "answerUC1";
             this.answerUC1.parentForm = null;
-            this.answerUC1.Size = new System.Drawing.Size(747, 279);
+            this.answerUC1.Size = new System.Drawing.Size(747, 326);
             this.answerUC1.TabIndex = 4;
             // 
             // debugInfo1
