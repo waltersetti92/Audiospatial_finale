@@ -36,7 +36,7 @@
             this.labLuda.AutoSize = true;
             this.labLuda.BackColor = System.Drawing.Color.Transparent;
             this.labLuda.Font = new System.Drawing.Font("Snap ITC", 80F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labLuda.ForeColor = System.Drawing.Color.OrangeRed;
+            this.labLuda.ForeColor = System.Drawing.Color.Yellow;
             this.labLuda.Location = new System.Drawing.Point(32, 14);
             this.labLuda.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labLuda.Name = "labLuda";
@@ -48,7 +48,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(146)))), ((int)(((byte)(207)))));
             this.Controls.Add(this.labLuda);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Initial";

@@ -16,10 +16,10 @@ namespace Audiospatial
         public Initial()
         {
             InitializeComponent();
-            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
-            SetStyle(ControlStyles.Opaque, true);
-            labLuda.BackColor = Color.Transparent;
-            this.BackColor = Color.Transparent;
+           // SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+           // SetStyle(ControlStyles.Opaque, true);
+           // labLuda.BackColor = Color.Transparent;
+            //this.BackColor = Color.Transparent;
         }
 
         private void Initial_Load(object sender, EventArgs e)

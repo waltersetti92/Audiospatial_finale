@@ -116,7 +116,7 @@ namespace Audiospatial
                         can_answer = new int[] { uda_server_communication.explorers[
                     mn.turno % uda_server_communication.explorers.Length] };
                     }
-                    mn.turno += 1;
+                    //mn.turno += 1;
                     Dictionary<String, object> request = new Dictionary<String, object>();
                     request.Add("question", "Inserisci il risultato corretto");
                     request.Add("input_type", 0);

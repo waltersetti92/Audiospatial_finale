@@ -53,13 +53,16 @@ namespace Audiospatial
         public string data_start;
         public string completed;
         public static System.Diagnostics.Process proc;
-        public int turno = 0;
+        public int turno = -1;
         public int contatore_iniziale = 0;
         public string MPV = resourcesPath + "\\" + "mpv.com";
+        public int contatore_abort = 0;
+        private Business_Logic BL;
         public string initial_video = Path.GetDirectoryName(Application.ExecutablePath) + "\\..\\..\\..\\..\\Video_GAMES\\Audiospaziale\\iniziale.mov";
        // public string initial_video = Path.GetDirectoryName(Application.ExecutablePath) + "\\..\\..\\..\\..\\..\\Video_GAMES\\Audiospaziale\\iniziale.mov";
         public string wait_data()
         {
+            turno += 1;
             int[] can_answer;
             if (uda_server_communication.explorers.Length == 0)
             {
@@ -70,7 +73,7 @@ namespace Audiospatial
                 can_answer = new int[] { uda_server_communication.explorers[
                     turno % uda_server_communication.explorers.Length] };
             }
-            turno += 1;
+
             Dictionary<String, object> request = new Dictionary<String, object>();
             request.Add("question", "Inserisci il risultato corretto");
             request.Add("input_type", 0);
@@ -86,7 +89,7 @@ namespace Audiospatial
             started_uda = "https://luda.nixo.xyz//api/uda/put/?i=5&k=7" + "&data=" + data_start;
             completed = "https://luda.nixo.xyz//api/uda/put/?i=5&k=16";
             speakers = new Speakers();
-            Business_Logic BL = new Business_Logic(this,speakers);
+            BL = new Business_Logic(this,speakers);
             onactivity = 1; // bisogna mettere 1
             messaggio = 1;
             scenario = 1;
@@ -194,11 +197,13 @@ namespace Audiospatial
                 if (status == 9)
                 {
                 }
-                if (status == 11 || status == 12)
+                if ((status == 11 || status == 12) && contatore_abort == 0)
                 {
-                    System.Diagnostics.Process.GetCurrentProcess().Kill();
-
+                    BL.Url_Put("5");
+                    Thread.Sleep(500);
                 }
+                if ((status == 11 || status == 12) && contatore_abort == 1)
+                    System.Diagnostics.Process.GetCurrentProcess().Kill();
                 if (status == 14)
                 {
 
