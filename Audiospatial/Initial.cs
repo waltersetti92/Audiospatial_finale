@@ -32,7 +32,7 @@ namespace Audiospatial
             Location = new Point(offset, offset);
             Width = w - 2 * offset;
             Height = h - 2 * offset;
-            labLuda.Location = new Point((w/3 - labLuda.Width / 3 - offset), 50);
+            labLuda.Location = new Point((w/2 - labLuda.Width / 2 - offset), 150);
         }
 
         private void button1_Click(object sender, EventArgs e)

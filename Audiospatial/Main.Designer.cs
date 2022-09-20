@@ -47,7 +47,7 @@
             // 
             // finale_Scenario1
             // 
-            this.finale_Scenario1.BackColor = System.Drawing.Color.LightGray;
+            this.finale_Scenario1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(146)))), ((int)(((byte)(207)))));
             this.finale_Scenario1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.finale_Scenario1.Location = new System.Drawing.Point(377, -76);
             this.finale_Scenario1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
@@ -214,7 +214,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(146)))), ((int)(((byte)(207)))));
             this.ClientSize = new System.Drawing.Size(1346, 732);
             this.Controls.Add(this.finale_Scenario1);
             this.Controls.Add(this.ucSpeaker1);
@@ -231,6 +231,7 @@
             this.Controls.Add(this.primo_Scenario1);
             this.Controls.Add(this.activityUdaUC1);
             this.Controls.Add(this.initial1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Main";
             this.Text = "Postazione AudioSpaziale";

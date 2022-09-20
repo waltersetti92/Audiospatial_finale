@@ -128,8 +128,8 @@ namespace Audiospatial
             ucSpeaker1.init(speakers);
            
             home();
-            BackgroundImageLayout = ImageLayout.Stretch;
-            BackgroundImage = Image.FromFile(resourcesPath + "\\" + background_image);
+           // BackgroundImageLayout = ImageLayout.Stretch;
+           // BackgroundImage = Image.FromFile(resourcesPath + "\\" + background_image);
 
             activitiesList = readActivitiesList();
             activity = new ActivityMathSpatialAudio(activitiesList, this, speakers, activity_Stanza1, debugInfo1,ucSpeaker1);
