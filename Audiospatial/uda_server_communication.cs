@@ -24,8 +24,8 @@ namespace Audiospatial
         public static int[] explorers;
         public static int turno;
         public static int indizio;
-        //public static string server_url = "http://192.168.10.1/luda02/";
-         public static string server_url = "https://luda.nixo.xyz/";
+        public static string server_url = "http://192.168.10.1/luda02/";
+         //public static string server_url = "https://luda.nixo.xyz/";
         public uda_server_communication()
         {
         }

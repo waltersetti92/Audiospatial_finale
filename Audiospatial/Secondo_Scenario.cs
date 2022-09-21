@@ -66,6 +66,7 @@ namespace Audiospatial
             timeleft =15;
             timerlabel.Text = "15";
             timer1.Enabled = true;
+            parentForm.PutStarted();
             timer1.Start();
 
         }
@@ -103,7 +104,8 @@ namespace Audiospatial
                         }
                         if (status == 10 || status == 7)
                         {
-                            await uda_server_communication.Server_Request(put_wait_data);
+                            parentForm.contatore_iniziale = 0;
+                            await uda_server_communication.Server_Request(put_started);
                         }
                         Thread.Sleep(1000);
                         timeleft = timeleft - 1;
@@ -140,7 +142,6 @@ namespace Audiospatial
                         {
                             await uda_server_communication.Server_Request(put_wait_data);
                         }
-                        timerlabel.Text = "00";
                         this.Update();
                         timer1.Stop();
                         await uda_server_communication.Server_Request(put_started);

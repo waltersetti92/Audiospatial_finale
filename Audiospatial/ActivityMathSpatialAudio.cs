@@ -122,19 +122,19 @@ namespace Audiospatial
                     form.messaggio = 4; // Questo per il messaggio da mandare in show message  
                     form.onStartActivity(form.iDifficulty, 0, form.participants, "1");
                 }
-                else if (form.onactivity == 5 && form.ripetiz == 0)
+             /*   else if (form.onactivity == 5 && form.ripetiz == 0)
                 {
                     form.messaggio = 5; // Questo per il messaggio da mandare in show message 
                     form.onStartActivity(form.iDifficulty, 0, form.participants, "1");
-                }
-                else if (form.onactivity == 6 && form.ripetiz == 0)
+                }*/
+               /* else if (form.onactivity == 6 && form.ripetiz == 0)
                 {
                     form.messaggio = 6; // Questo per il messaggio da mandare in show message  
                     form.onStartActivity(form.iDifficulty, 0, form.participants, "1");
-                }
-                else if (form.onactivity == 7 && form.ripetiz == 0)
+                }*/
+                else if (form.onactivity == 5 && form.ripetiz == 0)
                 {
-                    form.messaggio = 7; // Questo per il messaggio da mandare in show message  
+                    form.messaggio = 5; // Questo per il messaggio da mandare in show message  (c'era 7)
                     form.finale();
 
                 }

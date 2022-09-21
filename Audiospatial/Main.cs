@@ -178,9 +178,9 @@ namespace Audiospatial
             {
                 int status = int.Parse(k);
                 if (status == 0)
-                {    
+                {
                     //BackgroundImageLayout = ImageLayout.Stretch;
-                   // BackgroundImage = Image.FromFile(resourcesPath + "\\" + background_image);
+                    // BackgroundImage = Image.FromFile(resourcesPath + "\\" + background_image);
                     finale_Scenario1.Visible = false;
                     BackColor = Color.FromArgb(3, 146, 207);
                     initial1.Visible = true;

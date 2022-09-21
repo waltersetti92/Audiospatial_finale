@@ -31,8 +31,8 @@ namespace Audiospatial
             speakers = new Speakers();
             put_started = "/api/uda/put/?i=5&k=7";
             put_wait_data = "/api/uda/put/?i=5&k=14" + "&data=" + "{\"answer\": \"Inserisci il risultato corretto\", \"input_type\":\"\"}";
-            timerlabel.Text = "15";
-            timeleft = 15;
+            timerlabel.Text = "10";
+            timeleft = 10;
         }
         public void setPos(int w, int h)
         {
@@ -49,6 +49,7 @@ namespace Audiospatial
             timeleft = 15;
             timerlabel.Text = "15";
             timer1.Enabled = true;
+            parentForm.PutStarted();
             timer1.Start();
 
         }
@@ -101,15 +102,11 @@ namespace Audiospatial
                             Application.Exit();
                             Environment.Exit(0);
                         }
-                        if (status == 13)
-                        {
-                            this.Hide();
-                            parentForm.Abort_UDA();
-                            break;
-                        }
                         if (status == 10 || status == 7)
+
                         {
-                            await uda_server_communication.Server_Request(put_wait_data);
+                            parentForm.contatore_iniziale = 0;
+                            await uda_server_communication.Server_Request(put_started);
                         }
                         Thread.Sleep(1000);
                         timeleft = timeleft - 1;
@@ -136,20 +133,14 @@ namespace Audiospatial
                             Application.Exit();
                             Environment.Exit(0);
                         }
-                        if (status == 13)
-                        {
-                            this.Hide();
-                            parentForm.Abort_UDA();
-                            break;
-                        }
                         if (status == 10 || status == 7)
                         {
+                            parentForm.contatore_iniziale = 1;
                             await uda_server_communication.Server_Request(put_wait_data);
                         }
-                        timerlabel.Text = "00";
                         this.Update();
                         timer1.Stop();
-                        await uda_server_communication.Server_Request(put_started);
+                        parentForm.contatore_iniziale = 1;
                         parentForm.closeMessage();
                     }
                     Thread.Sleep(400);

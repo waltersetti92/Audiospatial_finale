@@ -91,8 +91,8 @@ namespace Audiospatial
         {
             timerlabel.Visible = true;
             label1.Visible = true;  
-            timerlabel.Text = "15";
-            timeleft = 15;
+            timerlabel.Text = "1";
+            timeleft = 1;
             timer1.Enabled = true;
             Putwaitdata();
             Thread.Sleep(400);
