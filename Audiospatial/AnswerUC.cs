@@ -69,7 +69,7 @@ namespace Audiospatial
 
         private void AnswerUC_Load(object sender, EventArgs e)
         {
-
+          
         }
 
         private void btAnswer_Click(object sender, EventArgs e)
@@ -87,14 +87,25 @@ namespace Audiospatial
         {
 
         }
-        public void counter()
+        public async void counter()
         {
             timerlabel.Visible = true;
             label1.Visible = true;  
             timerlabel.Text = "15";
             timeleft = 15;
             timer1.Enabled = true;
+            Putwaitdata();
+            Thread.Sleep(400);
+            await uda_server_communication.Server_Request(parentForm.wait_data());
+            Thread.Sleep(400);
             timer1.Start();
+          
+        }
+
+        public async void Putwaitdata()
+        {
+            await uda_server_communication.Server_Request("api/uda/put/?i=5&k=14&data=" + parentForm.data_start);
+
         }
         private async void timer1_Tick(object sender, EventArgs e)
         {
@@ -112,10 +123,10 @@ namespace Audiospatial
                         {
                             System.Diagnostics.Process.GetCurrentProcess().Kill();
                         }
-                        if (status==7 || status == 10)
+                        if (status == 10)
                     {
                             parentForm.contatore_iniziale = 1;
-                            await uda_server_communication.Server_Request(parentForm.wait_data());
+                            Putwaitdata();
                             this.Update();
                         }
                         Thread.Sleep(1000);
@@ -125,12 +136,7 @@ namespace Audiospatial
                         while (true)
                         {
                             string k1 = parentForm.Status_Changed(parentForm.activity_form);
-                            int status1 = int.Parse(k1);
-                            if (status1 == 11 || status1 == 12)
-                            {
-                                System.Diagnostics.Process.GetCurrentProcess().Kill();
-                                break;
-                            }
+                            int status1 = int.Parse(k1);                          
                             if (status1 == 14)
                             {
                                 parentForm.contatore_iniziale = 1;

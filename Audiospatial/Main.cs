@@ -23,7 +23,7 @@ namespace Audiospatial
         public static readonly string resourcesPath1 = Path.GetDirectoryName(Application.ExecutablePath) + "\\resources1";
         public static readonly string resourcesPath = Path.GetDirectoryName(Application.ExecutablePath) + "\\resources";
         public static readonly string resultsDir = Path.GetDirectoryName(Application.ExecutablePath) + "\\results";
-        private const string background_image = "Buco_Nero.jpg";
+      //  private const string background_image = "Buco_Nero.jpg";
         private const string background_image_stanza = "bedsingle.png";
         private const string background_image_trafficjam = "trafficjam.png";
         private const string background_image_plane = "plane3.png";
@@ -178,8 +178,8 @@ namespace Audiospatial
                 int status = int.Parse(k);
                 if (status == 0)
                 {    
-                    BackgroundImageLayout = ImageLayout.Stretch;
-                    BackgroundImage = Image.FromFile(resourcesPath + "\\" + background_image);
+                    //BackgroundImageLayout = ImageLayout.Stretch;
+                   // BackgroundImage = Image.FromFile(resourcesPath + "\\" + background_image);
                     finale_Scenario1.Visible = false;
                     initial1.Visible = true;
                     k = "5";
@@ -535,11 +535,11 @@ namespace Audiospatial
         {
             activity_Stanza1.Visible = false;
             debugInfo1.Visible = false;
-
             answerUC1.show(iDifficulty);
             answerUC1.Visible = true;
             currUC = answerUC1;
             answerUC1.counter();
+
         }
         public void playbackResourceAudio(string audioname)
         {
