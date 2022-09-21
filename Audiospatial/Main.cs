@@ -128,6 +128,7 @@ namespace Audiospatial
             ucSpeaker1.init(speakers);
            
             home();
+       
            // BackgroundImageLayout = ImageLayout.Stretch;
            // BackgroundImage = Image.FromFile(resourcesPath + "\\" + background_image);
 
@@ -181,6 +182,7 @@ namespace Audiospatial
                     //BackgroundImageLayout = ImageLayout.Stretch;
                    // BackgroundImage = Image.FromFile(resourcesPath + "\\" + background_image);
                     finale_Scenario1.Visible = false;
+                    BackColor = Color.FromArgb(3, 146, 207);
                     initial1.Visible = true;
                     k = "5";
                 }
@@ -188,6 +190,7 @@ namespace Audiospatial
                 {
                     video_reproduction(initial_video);
                     initial1.Visible = false;
+                    BackColor = Color.White;
                     onStartActivity(2, 0, 1, "1");
                 }
                 if (status == 8)
@@ -242,6 +245,7 @@ namespace Audiospatial
         public void home()
         {
             if (currUC != null) currUC.Visible = false;
+            BackColor = Color.FromArgb(3, 146, 207);
             initial1.Show();
             currUC = initial1;
         }
@@ -282,6 +286,7 @@ namespace Audiospatial
         public void onStart1(string k)
         {
             initial1.Visible = false;
+            BackColor = Color.White;
             activityUdaUC1.Visible = true;
             currUC = activityUdaUC1;
         }
@@ -625,6 +630,11 @@ namespace Audiospatial
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void secondo_Scenario1_Load(object sender, EventArgs e)
         {
 
         }

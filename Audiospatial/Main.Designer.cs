@@ -49,7 +49,7 @@
             // 
             this.finale_Scenario1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(146)))), ((int)(((byte)(207)))));
             this.finale_Scenario1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.finale_Scenario1.Location = new System.Drawing.Point(-320, 54);
+            this.finale_Scenario1.Location = new System.Drawing.Point(561, 173);
             this.finale_Scenario1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.finale_Scenario1.Name = "finale_Scenario1";
             this.finale_Scenario1.parentForm = null;
@@ -60,7 +60,7 @@
             // ucSpeaker1
             // 
             this.ucSpeaker1.BackColor = System.Drawing.Color.Transparent;
-            this.ucSpeaker1.Location = new System.Drawing.Point(112, 25);
+            this.ucSpeaker1.Location = new System.Drawing.Point(575, 562);
             this.ucSpeaker1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.ucSpeaker1.Name = "ucSpeaker1";
             this.ucSpeaker1.parentForm = null;
@@ -70,7 +70,7 @@
             // final1
             // 
             this.final1.BackColor = System.Drawing.Color.Transparent;
-            this.final1.Location = new System.Drawing.Point(-212, 140);
+            this.final1.Location = new System.Drawing.Point(663, 230);
             this.final1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.final1.Name = "final1";
             this.final1.parentForm = null;
@@ -93,7 +93,7 @@
             // 
             this.quinto_Scenario1.BackgroundImage = global::Audiospatial.Properties.Resources.lion1;
             this.quinto_Scenario1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.quinto_Scenario1.Location = new System.Drawing.Point(-120, 40);
+            this.quinto_Scenario1.Location = new System.Drawing.Point(886, 32);
             this.quinto_Scenario1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.quinto_Scenario1.Name = "quinto_Scenario1";
             this.quinto_Scenario1.parentForm = null;
@@ -106,7 +106,7 @@
             this.quarto_Scenario1.BackColor = System.Drawing.Color.White;
             this.quarto_Scenario1.BackgroundImage = global::Audiospatial.Properties.Resources.popolazione;
             this.quarto_Scenario1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.quarto_Scenario1.Location = new System.Drawing.Point(68, 17);
+            this.quarto_Scenario1.Location = new System.Drawing.Point(839, 17);
             this.quarto_Scenario1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.quarto_Scenario1.Name = "quarto_Scenario1";
             this.quarto_Scenario1.parentForm = null;
@@ -117,7 +117,7 @@
             // 
             this.terzo_Scenario1.BackgroundImage = global::Audiospatial.Properties.Resources.plane3;
             this.terzo_Scenario1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.terzo_Scenario1.Location = new System.Drawing.Point(33, 54);
+            this.terzo_Scenario1.Location = new System.Drawing.Point(921, 95);
             this.terzo_Scenario1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.terzo_Scenario1.Name = "terzo_Scenario1";
             this.terzo_Scenario1.parentForm = null;
@@ -130,17 +130,18 @@
             this.secondo_Scenario1.BackColor = System.Drawing.Color.White;
             this.secondo_Scenario1.BackgroundImage = global::Audiospatial.Properties.Resources.trafficjam;
             this.secondo_Scenario1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.secondo_Scenario1.Location = new System.Drawing.Point(80, 17);
+            this.secondo_Scenario1.Location = new System.Drawing.Point(717, 279);
             this.secondo_Scenario1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.secondo_Scenario1.Name = "secondo_Scenario1";
             this.secondo_Scenario1.parentForm = null;
             this.secondo_Scenario1.Size = new System.Drawing.Size(927, 509);
             this.secondo_Scenario1.TabIndex = 7;
+            this.secondo_Scenario1.Load += new System.EventHandler(this.secondo_Scenario1_Load);
             // 
             // messageUC1
             // 
             this.messageUC1.BackColor = System.Drawing.Color.Transparent;
-            this.messageUC1.Location = new System.Drawing.Point(68, 74);
+            this.messageUC1.Location = new System.Drawing.Point(-198, 426);
             this.messageUC1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.messageUC1.Name = "messageUC1";
             this.messageUC1.parentForm = null;
@@ -152,7 +153,7 @@
             // 
             this.activity_Stanza1.BackColor = System.Drawing.Color.Transparent;
             this.activity_Stanza1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.activity_Stanza1.Location = new System.Drawing.Point(80, 40);
+            this.activity_Stanza1.Location = new System.Drawing.Point(514, 355);
             this.activity_Stanza1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.activity_Stanza1.Name = "activity_Stanza1";
             this.activity_Stanza1.parentForm = null;
@@ -185,7 +186,7 @@
             this.primo_Scenario1.BackColor = System.Drawing.Color.White;
             this.primo_Scenario1.BackgroundImage = global::Audiospatial.Properties.Resources.bedsingle;
             this.primo_Scenario1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.primo_Scenario1.Location = new System.Drawing.Point(-141, -7);
+            this.primo_Scenario1.Location = new System.Drawing.Point(-507, 217);
             this.primo_Scenario1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.primo_Scenario1.Name = "primo_Scenario1";
             this.primo_Scenario1.parentForm = null;
@@ -204,7 +205,7 @@
             // initial1
             // 
             this.initial1.BackColor = System.Drawing.Color.Transparent;
-            this.initial1.Location = new System.Drawing.Point(0, 54);
+            this.initial1.Location = new System.Drawing.Point(142, 283);
             this.initial1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.initial1.Name = "initial1";
             this.initial1.parentForm = null;
