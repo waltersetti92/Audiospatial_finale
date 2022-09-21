@@ -255,15 +255,19 @@ namespace Audiospatial
             }
             else if (onactivity == 3)
             {
-                terzo_Scenario1.Show();
-                currUC1 = terzo_Scenario1;
-            }
-            else if (onactivity == 4)
-            {
+                /*terzo_Scenario1.Show();
+                currUC1 = terzo_Scenario1;*/
                 quarto_Scenario1.Show();
                 currUC1 = quarto_Scenario1;
             }
-            else if (onactivity == 5)
+            else if (onactivity == 4)
+            {
+                sesto_Scenario1.Show();
+                currUC1 = sesto_Scenario1;
+                /*quarto_Scenario1.Show();
+                currUC1 = quarto_Scenario1;*/
+            }
+           /* else if (onactivity == 5)
             {
                 quinto_Scenario1.Show();
                 currUC1 = quinto_Scenario1;
@@ -272,7 +276,7 @@ namespace Audiospatial
             {
                 sesto_Scenario1.Show();
                 currUC1 = sesto_Scenario1;
-            }
+            }*/
 
         }
         public void onStart1(string k)
@@ -339,24 +343,7 @@ namespace Audiospatial
                 ucSpeaker1.Visible = true;
                 ucSpeaker1.change_number();
                 this.Update();
-                messageUC1.Visible = false;
-                BackgroundImageLayout = ImageLayout.Stretch;
-                BackgroundImage = Image.FromFile(resourcesPath1 + "\\" + background_image_plane);
-                speakers.sound_to_play = "thunder";
-                //speakers.reinitSpeakers();
-                terzo_Scenario1.Visible = true;
-                terzo_Scenario1.counter();
-            }
-            else if (onactivity == 4)
-            {
-                activity_Stanza1.Visible = false;
-                BackgroundImageLayout = ImageLayout.Stretch;
-                this.Update();
-                BackgroundImage = Image.FromFile(resourcesPath1 + "\\" + background_image_plane);
-                this.Update();
-                ucSpeaker1.Visible = true;
-                ucSpeaker1.change_number();
-                this.Update();
+
                 messageUC1.Visible = false;
                 BackgroundImageLayout = ImageLayout.Stretch;
                 BackgroundImage = Image.FromFile(resourcesPath1 + "\\" + background_image_tribal);
@@ -364,8 +351,52 @@ namespace Audiospatial
                 //speakers.reinitSpeakers();
                 quarto_Scenario1.Visible = true;
                 quarto_Scenario1.counter();
+
+               /* messageUC1.Visible = false;
+                BackgroundImageLayout = ImageLayout.Stretch;
+                BackgroundImage = Image.FromFile(resourcesPath1 + "\\" + background_image_plane);
+                speakers.sound_to_play = "thunder";
+                //speakers.reinitSpeakers();
+                terzo_Scenario1.Visible = true;
+                terzo_Scenario1.counter();*/
             }
-            else if (onactivity == 5)
+            else if (onactivity == 4)
+            {
+                activity_Stanza1.Visible = false;
+                BackgroundImageLayout = ImageLayout.Stretch;
+                this.Update();
+                BackgroundImage = Image.FromFile(resourcesPath1 + "\\" + background_image_tribal);
+                this.Update();
+                ucSpeaker1.Visible = true;
+                ucSpeaker1.change_number();
+                this.Update();
+
+                /* activity_Stanza1.Visible = false;
+                 BackgroundImageLayout = ImageLayout.Stretch;
+                 this.Update();
+                 BackgroundImage = Image.FromFile(resourcesPath1 + "\\" + background_image_plane);
+                 this.Update();
+                 ucSpeaker1.Visible = true;
+                 ucSpeaker1.change_number();
+                 this.Update();*/
+
+                messageUC1.Visible = false;
+                BackgroundImageLayout = ImageLayout.Stretch;
+                BackgroundImage = Image.FromFile(resourcesPath1 + "\\" + background_image_maya);
+                speakers.sound_to_play = "acchiappasogni";
+                //speakers.reinitSpeakers();
+                sesto_Scenario1.Visible = true;
+                sesto_Scenario1.counter();
+
+                /*messageUC1.Visible = false;
+                BackgroundImageLayout = ImageLayout.Stretch;
+                BackgroundImage = Image.FromFile(resourcesPath1 + "\\" + background_image_tribal);
+                speakers.sound_to_play = "bongo";
+                //speakers.reinitSpeakers();
+                quarto_Scenario1.Visible = true;
+                quarto_Scenario1.counter();*/
+            }
+          /*  else if (onactivity == 5)
             {
                 activity_Stanza1.Visible = false;
                 BackgroundImageLayout = ImageLayout.Stretch;
@@ -382,8 +413,8 @@ namespace Audiospatial
                // speakers.reinitSpeakers();
                 quinto_Scenario1.Visible = true;
                 quinto_Scenario1.counter();
-            }
-            else if (onactivity == 6)
+            }*/
+           /* else if (onactivity == 6)
             {
                 activity_Stanza1.Visible = false;
                 BackgroundImageLayout = ImageLayout.Stretch;
@@ -400,7 +431,7 @@ namespace Audiospatial
                 //speakers.reinitSpeakers();
                 sesto_Scenario1.Visible = true;
                 sesto_Scenario1.counter();
-            }
+            }*/
 
             iDifficulty = level;
             participants = num_participants;
@@ -431,28 +462,34 @@ namespace Audiospatial
             }
             else if (onactivity == 4)
             {
-                BackgroundImageLayout = ImageLayout.Stretch;
-                BackgroundImage = Image.FromFile(resourcesPath1 + "\\" + background_image_plane);
-                terzo_Scenario1.Visible = false;
-            }
-            else if (onactivity == 5)
-            {
+                //BackgroundImageLayout = ImageLayout.Stretch;
+                //BackgroundImage = Image.FromFile(resourcesPath1 + "\\" + background_image_plane);
+                //terzo_Scenario1.Visible = false;
                 BackgroundImageLayout = ImageLayout.Stretch;
                 BackgroundImage = Image.FromFile(resourcesPath1 + "\\" + background_image_tribal);
                 quarto_Scenario1.Visible = false;
             }
-            else if (onactivity == 6)
+            else if (onactivity == 5)
             {
-                BackgroundImageLayout = ImageLayout.Stretch;
-                BackgroundImage = Image.FromFile(resourcesPath1 + "\\" + background_image_lion);
-                quinto_Scenario1.Visible = false;
-            }
-            else if (onactivity == 7)
-            {
+                /* BackgroundImageLayout = ImageLayout.Stretch;
+                 BackgroundImage = Image.FromFile(resourcesPath1 + "\\" + background_image_tribal);
+                 quarto_Scenario1.Visible = false;*/
                 BackgroundImageLayout = ImageLayout.Stretch;
                 BackgroundImage = Image.FromFile(resourcesPath1 + "\\" + background_image_maya);
                 sesto_Scenario1.Visible = false;
             }
+            /*else if (onactivity == 6)
+            {
+               BackgroundImageLayout = ImageLayout.Stretch;
+                BackgroundImage = Image.FromFile(resourcesPath1 + "\\" + background_image_lion);
+                quinto_Scenario1.Visible = false;
+            } */
+            /*else if (onactivity == 7)
+            {
+                BackgroundImageLayout = ImageLayout.Stretch;
+                BackgroundImage = Image.FromFile(resourcesPath1 + "\\" + background_image_maya);
+                sesto_Scenario1.Visible = false;
+            }*/
             currUC.Visible = true;
             message_callback?.Invoke();
         }
@@ -518,14 +555,16 @@ namespace Audiospatial
             else if (messaggio == 2)
                 secondo_Scenario1.setMessage_ps(bt_text);
             else if (messaggio == 3)
-                terzo_Scenario1.setMessage_ps(bt_text);
-            else if (messaggio == 4)
+                //terzo_Scenario1.setMessage_ps(bt_text);
                 quarto_Scenario1.setMessage_ps(bt_text);
-            else if (messaggio == 5)
-                quinto_Scenario1.setMessage_ps(bt_text);
-            else if (messaggio == 6)
+            else if (messaggio == 4)
+                // quarto_Scenario1.setMessage_ps(bt_text);
                 sesto_Scenario1.setMessage_ps(bt_text);
-            else if (messaggio == 7)
+           /* else if (messaggio == 5)
+               // quinto_Scenario1.setMessage_ps(bt_text);
+            else if (messaggio == 6)
+                sesto_Scenario1.setMessage_ps(bt_text);*/
+            else if (messaggio == 5) //c'era 7
             {
                 await uda_server_communication.Server_Request(completed);
                 finale_Scenario1.Visible = true;
