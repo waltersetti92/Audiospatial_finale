@@ -23,12 +23,12 @@ namespace Audiospatial
 
 
         private Dictionary<string, string> soundmap = new Dictionary<string, string> {
-            { "sveglia", "menta"},
-            { "clacson", "panna"},
+            { "sveglia", "alarm"},
+            { "clacson", "clacson"},
             { "thunder", "pesto"},
-            { "bongo", "ninfea"},
+            { "bongo", "bongo"},
             { "ruggito", "prezzemolo"},
-            { "acchiappasogni", "prosciutto"}
+            { "acchiappasogni", "acchiappasogni"}
         };
         public Speakers()
         {
