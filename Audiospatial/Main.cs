@@ -179,11 +179,11 @@ namespace Audiospatial
                 int status = int.Parse(k);
                 if (status == 0)
                 {
-                    //BackgroundImageLayout = ImageLayout.Stretch;
-                    // BackgroundImage = Image.FromFile(resourcesPath + "\\" + background_image);
-                    finale_Scenario1.Visible = false;
-                    BackColor = Color.FromArgb(3, 146, 207);
                     initial1.Visible = true;
+                    finale_Scenario1.Visible = false;
+                    BackgroundImage = null;
+                    BackColor = Color.FromArgb(3, 146, 207);
+                    this.Update();
                     k = "5";
                 }
                 if (status == 6)
@@ -238,6 +238,7 @@ namespace Audiospatial
         public void finale()
         {
             if (currUC != null) currUC.Visible = false;
+            sesto_Scenario1.Visible = false;
             finale_Scenario1.Show();
             currUC = finale_Scenario1;
             finale_Scenario1.indizio();
@@ -575,13 +576,15 @@ namespace Audiospatial
                 finale_Scenario1.Visible = true;
             }           
         }
-        public void onCountDownEnd()
+        public async void onCountDownEnd()
         {
             activity_Stanza1.Visible = false;
             debugInfo1.Visible = false;
             answerUC1.show(iDifficulty);
             answerUC1.Visible = true;
             currUC = answerUC1;
+            await uda_server_communication.Server_Request(wait_data());
+            Thread.Sleep(400);
             answerUC1.counter();
 
         }

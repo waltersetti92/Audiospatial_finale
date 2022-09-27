@@ -109,6 +109,7 @@
             this.timerlabel.Size = new System.Drawing.Size(172, 119);
             this.timerlabel.TabIndex = 13;
             this.timerlabel.Text = "10";
+            this.timerlabel.Click += new System.EventHandler(this.timerlabel_Click);
             // 
             // label5
             // 

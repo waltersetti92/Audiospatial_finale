@@ -196,7 +196,7 @@ namespace Audiospatial
         }
 
         // the same participant starts a new operation
-        public void nextOperand()
+        public  void nextOperand()
         {
             currOp++;
 
@@ -240,10 +240,14 @@ namespace Audiospatial
             activity.setStartNumber(-1);                // ISSUE : cannot hide current starting number
             debug.setDebugInfo(oldNumber.ToString(), currOperationsLabels[currSpeaker], currOperand.ToString(), currResult.ToString());
 
-            if (iType == N_TYPE_SPATIAL) 
+            if (iType == N_TYPE_SPATIAL)
+            {
                 playNsounds(speaker_labels[currSpeaker]);
+                //
+            }             
             else playNsounds(currOperationsSymbols[currSpeaker]);
 
+     
         }
 
         //playback first sound and start timer

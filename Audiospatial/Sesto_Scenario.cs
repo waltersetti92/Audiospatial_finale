@@ -24,8 +24,6 @@ namespace Audiospatial
         public Sesto_Scenario()
         {
             InitializeComponent();
-            this.BackgroundImage = Properties.Resources.lion;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             speakers = new Speakers();
             timerlabel.Text = "15";
             put_started = "/api/uda/put/?i=5&k=7";
@@ -73,8 +71,8 @@ namespace Audiospatial
         public void counter()
         {
             timerlabel.Visible = true;
-            timeleft = 1;
-            timerlabel.Text = "1";
+            timeleft = 12;
+            timerlabel.Text = "12";
             timer1.Enabled = true;
             parentForm.PutStarted();
             timer1.Start();
@@ -110,10 +108,10 @@ namespace Audiospatial
                         }
                         Thread.Sleep(1000);
                         timeleft = timeleft - 1;
-                        if (timeleft < 10 && timeleft > 0)
-                            timerlabel.Text = "0" + timeleft.ToString();
-                        else
+                        if (timeleft <= 12 && timeleft >= 10)
                             timerlabel.Text = timeleft.ToString();
+                        else
+                            timerlabel.Text = "0" + timeleft.ToString();
                         this.Update();
                     }
                     Thread.Sleep(400);

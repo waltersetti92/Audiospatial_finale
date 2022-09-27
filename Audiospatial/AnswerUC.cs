@@ -89,14 +89,15 @@ namespace Audiospatial
         }
         public async void counter()
         {
+            parentForm.contatore_iniziale = 1;
             timerlabel.Visible = true;
             label1.Visible = true;  
-            timerlabel.Text = "1";
-            timeleft = 1;
+            timerlabel.Text = "10";
+            timeleft = 10;
             timer1.Enabled = true;
-            Putwaitdata();
-            Thread.Sleep(400);
-            await uda_server_communication.Server_Request(parentForm.wait_data());
+           // Putwaitdata();
+        //   Thread.Sleep(400);
+         //   await uda_server_communication.Server_Request(parentForm.wait_data());
             Thread.Sleep(400);
             timer1.Start();
           
@@ -104,7 +105,7 @@ namespace Audiospatial
 
         public async void Putwaitdata()
         {
-            await uda_server_communication.Server_Request("api/uda/put/?i=5&k=14&data=" + parentForm.data_start);
+            await uda_server_communication.Server_Request(parentForm.wait_data());
 
         }
         private async void timer1_Tick(object sender, EventArgs e)
@@ -125,13 +126,16 @@ namespace Audiospatial
                         }
                         if (status == 10)
                     {
-                            parentForm.contatore_iniziale = 1;
+                            //parentForm.contatore_iniziale = 1;
                             Putwaitdata();
                             this.Update();
                         }
                         Thread.Sleep(1000);
                         timeleft = timeleft - 1;
-                        timerlabel.Text = timeleft.ToString();
+                        if (timeleft == 10)
+                            timerlabel.Text = timeleft.ToString();
+                        else
+                            timerlabel.Text = "0" + timeleft.ToString();
                         this.Update();
                         while (true)
                         {
@@ -159,12 +163,13 @@ namespace Audiospatial
                                     break;
                                 }
                                 if (response == null) { break; }
-                                parentForm.PutStarted();
+                             
                                 timer1.Stop();
                                 timerlabel.Visible = false;
                                 label1.Visible = false;
- 
+                                parentForm.PutStarted();
                                 parentForm.onAnswer(response);
+                               
 
                             }
                             Thread.Sleep(400);

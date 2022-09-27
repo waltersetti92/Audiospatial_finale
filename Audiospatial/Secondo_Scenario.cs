@@ -29,8 +29,8 @@ namespace Audiospatial
             speakers = new Speakers();
             put_started = "/api/uda/put/?i=5&k=7";
             put_wait_data = "/api/uda/put/?i=5&k=14" + "&data=" + "{\"answer\": \"Inserisci il risultato corretto\", \"input_type\":\"\"}";
-            timerlabel.Text = "15";
-            timeleft = 15;
+            timerlabel.Text = "12";
+            timeleft = 12;
         }
         public void setPos(int w, int h)
         {
@@ -110,9 +110,10 @@ namespace Audiospatial
                         Thread.Sleep(1000);
                         timeleft = timeleft - 1;
                         if (timeleft < 10 && timeleft > 0)
-                            timerlabel.Text = "0" + timeleft.ToString();
-                        else
-                            timerlabel.Text = timeleft.ToString();
+                            if (timeleft <= 12 && timeleft >= 10)
+                                timerlabel.Text = timeleft.ToString();
+                            else
+                                timerlabel.Text = "0" + timeleft.ToString();
                         this.Update();
                     }
                     Thread.Sleep(400);

@@ -156,5 +156,10 @@ namespace Audiospatial
 
             }
         }
+
+        private void timerlabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
