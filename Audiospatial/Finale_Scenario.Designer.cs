@@ -42,14 +42,14 @@
             // 
             this.labIndicazioni1.AutoSize = true;
             this.labIndicazioni1.BackColor = System.Drawing.Color.Transparent;
-            this.labIndicazioni1.Font = new System.Drawing.Font("Stencil", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labIndicazioni1.Font = new System.Drawing.Font("Snap ITC", 33F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labIndicazioni1.ForeColor = System.Drawing.Color.Yellow;
-            this.labIndicazioni1.Location = new System.Drawing.Point(4, 68);
+            this.labIndicazioni1.Location = new System.Drawing.Point(110, 0);
             this.labIndicazioni1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labIndicazioni1.Name = "labIndicazioni1";
-            this.labIndicazioni1.Size = new System.Drawing.Size(964, 63);
+            this.labIndicazioni1.Size = new System.Drawing.Size(2342, 85);
             this.labIndicazioni1.TabIndex = 16;
-            this.labIndicazioni1.Text = "LA MISSIONE E\' STATA COMPLETATA!";
+            this.labIndicazioni1.Text = "LA MISSIONE E\' STATA COMPLETATA, ECCO L\'INIDZIO!";
             // 
             // label4
             // 
@@ -57,12 +57,12 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Stencil", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Yellow;
-            this.label4.Location = new System.Drawing.Point(4, 456);
+            this.label4.Location = new System.Drawing.Point(4, 426);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1976, 63);
+            this.label4.Size = new System.Drawing.Size(1515, 63);
             this.label4.TabIndex = 20;
-            this.label4.Text = "HO DECISO DI DEDICARE LA MIA VITA ALL\'ESPLORAZIONE E ALL\'AVVENTURA!";
+            this.label4.Text = "HO DECISO DI DEDICARE LA MIA VITA ALL\'ESPLORAZIONE !";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
@@ -71,7 +71,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Stencil", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Yellow;
-            this.label3.Location = new System.Drawing.Point(4, 374);
+            this.label3.Location = new System.Drawing.Point(4, 303);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(1187, 63);
@@ -84,7 +84,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Stencil", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Yellow;
-            this.label2.Location = new System.Drawing.Point(4, 301);
+            this.label2.Location = new System.Drawing.Point(4, 303);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(478, 63);
@@ -97,7 +97,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Stencil", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(4, 223);
+            this.label1.Location = new System.Drawing.Point(12, 181);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(995, 63);
@@ -110,19 +110,18 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Stencil", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Yellow;
-            this.label5.Location = new System.Drawing.Point(236, 539);
+            this.label5.Location = new System.Drawing.Point(370, 556);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(1070, 63);
+            this.label5.Size = new System.Drawing.Size(0, 63);
             this.label5.TabIndex = 21;
-            this.label5.Text = "COMPLIMENTI! ECCO IL VOSTRO INDIZIO:";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Audiospatial.Properties.Resources.alarm;
-            this.pictureBox1.Location = new System.Drawing.Point(851, 644);
+            this.pictureBox1.Location = new System.Drawing.Point(689, 492);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(582, 455);
+            this.pictureBox1.Size = new System.Drawing.Size(622, 477);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;

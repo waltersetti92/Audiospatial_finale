@@ -577,16 +577,15 @@ namespace Audiospatial
             }           
         }
         public async void onCountDownEnd()
-        {
+        {         
             activity_Stanza1.Visible = false;
             debugInfo1.Visible = false;
             answerUC1.show(iDifficulty);
+         //  await uda_server_communication.Server_Request(wait_data());
+           //Thread.Sleep(600);
             answerUC1.Visible = true;
-            currUC = answerUC1;
-            await uda_server_communication.Server_Request(wait_data());
-            Thread.Sleep(400);
+            currUC = answerUC1;        
             answerUC1.counter();
-
         }
         public void playbackResourceAudio(string audioname)
         {

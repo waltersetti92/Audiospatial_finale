@@ -155,7 +155,7 @@ namespace Audiospatial
             }
         }
 
-        private void onEndParticipant()
+        private async void onEndParticipant()
         {
 
             if (iType == N_TYPE_SPATIAL)
@@ -165,7 +165,7 @@ namespace Audiospatial
             //form.showAssSoundInfo(iDifficultyLevel, resumeParticipant);
         }
 
-        public void resumeParticipant()
+        public async void resumeParticipant()
         {
 
             form.Refresh();
@@ -283,7 +283,7 @@ namespace Audiospatial
         }
 
         // callback of every timer
-        private void TimerEventProcessor(Object myObject, EventArgs myEventArgs)
+        private async void TimerEventProcessor(Object myObject, EventArgs myEventArgs)
             {
             aTimer.Stop();
 
@@ -310,7 +310,9 @@ namespace Audiospatial
                     if (elapsedTime > answerTime[iDifficultyLevel])
                     {
                         form.onCountDownEnd();
+                        
                         activity.setCountDown(-1);
+                        await uda_server_communication.Server_Request(form.wait_data());
                     }
                     else
                     {

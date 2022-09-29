@@ -92,8 +92,8 @@ namespace Audiospatial
             parentForm.contatore_iniziale = 1;
             timerlabel.Visible = true;
             label1.Visible = true;  
-            timerlabel.Text = "10";
-            timeleft = 10;
+            timerlabel.Text = "07";
+            timeleft = 7;
             timer1.Enabled = true;
            // Putwaitdata();
         //   Thread.Sleep(400);

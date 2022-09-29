@@ -63,8 +63,8 @@ namespace Audiospatial
         public void counter()
         {
             timerlabel.Visible = true;
-            timeleft =15;
-            timerlabel.Text = "15";
+            timeleft =12;
+            timerlabel.Text = "12";
             timer1.Enabled = true;
             parentForm.PutStarted();
             timer1.Start();
@@ -109,7 +109,6 @@ namespace Audiospatial
                         }
                         Thread.Sleep(1000);
                         timeleft = timeleft - 1;
-                        if (timeleft < 10 && timeleft > 0)
                             if (timeleft <= 12 && timeleft >= 10)
                                 timerlabel.Text = timeleft.ToString();
                             else
